@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>alta menú</title>
+  <style>
+    #fin{
+      background-color: red;
+      color:yellow;
+      padding:1%;
+    }
+    input{
+      margin: 0 auto;
+    }
+  </style>
+  
+</head>
+<body>
+  
+  <form action="alta_menu2.php" id method="post">
+    
+    <input type="text" name="nombre_menu" id="fin" placeholder="Nombre menú"><br>
+    <input type="number" name="precio" step="00.001" id="fin" placeholder="Precio"><br>
+    <textarea name="descripcion" id="" cols="30" rows="10" placeholder="Modo de preparación"></textarea>
+
+    <input type="submit" value="crear">
+  </form>
+  
+</body>
+</html>
