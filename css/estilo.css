@@ -1,0 +1,42 @@
+#boton1 path {
+  fill: #9d2b16;
+}
+
+#boton2 path {
+  fill: #084a8b;
+}
+
+#acciones{
+  display: flex;
+  justify-content: space-around;
+}
+
+td{
+  border: darkgreen solid 3px;
+  text-align: center;
+}
+thead{
+    border: darkgreen solid 3px;
+    text-decoration:underline;
+    font-size: 135%;
+    text-transform: uppercase;    
+  }
+
+table{
+  border: darkgreen solid 3px;
+  margin: 10% auto;
+  font-size: 25px;
+  width: 55%;
+  text-align: center;
+}
+
+#boton_crear{
+  margin: 2% 85%;
+  border-radius: 35px;
+  padding: 0.5%;
+  background-color: #084a8b;
+  width: 10%;
+  color: white;
+  font-size: large;
+}
+

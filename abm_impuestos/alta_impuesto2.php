@@ -3,21 +3,19 @@
 
   //if (!empty($conexion)) {
 
-    $nombre_imp = $_POST['nom_impuesto'];
+    $nombre_imp = $_POST['nom_impuesto']; 
     $porcentaje = $_POST['porcentaje'];
     
 
-    echo "El porcentaje es: ".$porcentaje;
-    echo "El nombre del IVA es: ".$nombre_imp;
+    //echo "El porcentaje es: ".$porcentaje;
+    //echo "El nombre del IVA es: ".$nombre_imp;
     
-    $sql = "INSERT INTO `impuestos`(`nombre`, `porcentaje`) VALUES ('$nombre_imp','$porcentaje')";
+    $sql = "INSERT INTO `impuestos`(`nom_IMPUESTO`, `porcentaje`) VALUES ('$nombre_imp','$porcentaje')";
     mysqli_query($conexion, $sql) or die(mysqli_error($conexion)); 
 
-  //}else {
-   // echo "no hay conexión a la base de datos";
-  //}
-
-  
-
 ?>
+<script>
+
+  window.location.replace("principal_impuesto.php");
+</script>
 

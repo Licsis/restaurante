@@ -88,22 +88,35 @@
         <div class="row justify-content-center">
             <div class="col-12 col-lg-10">
                 
-                <form name="Alta Impuestos" action="alta_impuesto2.php" method="post" autocomplete="on" style="height: 10%;">
-                <fieldset> <legend> Carga Impuestos </legend> 
-                    <input placeholder="Nombre del impuesto" required name="nom_impuesto" type="text"> <br>
-                    <br>
-                    <input step="0.01" placeholder="Porcentaje" required name="porcentaje"  type="number">
-                    <br>
-                    <br>
-                    <input type="submit" value="Crear Impuesto" id="submit">
+                <form name="Alta Impuestos" action="alta_mesa2.php" method="post" autocomplete="on" style="height: 10%;">
+                <fieldset> <legend> Crear Mesas </legend> 
+                    <?php
+                        include "../conexion.php";
+                        $sql = "SELECT ID_mesa, ubicacion FROM mesas";                    
+                        $resultado = mysqli_query($conexion,$sql);
+
+                        ?>
+                        <select name="ubicacion" id="">
+                            <option value="0">Elegir Ubicación</option>
+    
+                        <?php
+                            while ($datos = mysqli_fetch_array($resultado)) {
+                                $idm = $datos['ID_mesa'];
+                                $ubim = $datos['ubicacion'];
+                            
+                                echo " <option value=".$ubim."> ".$ubim." </option>";
+
+                            }
+                        ?>
+
+                    </select>
+                    
+                    <br><br>
+                    <input placeholder="Capacidad" required name="capacidad"  type="number">
+                    <br><br>
+                    <input type="submit" value="Crear Mesa" id="submit">
                     </fieldset>
                 </form>
-
-                <?
-                    $sql1 = "SELECT * FROM impuestos";
-                    mysqli
-
-                ?>
                 
             </div>
         </div>
