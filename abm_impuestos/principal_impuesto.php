@@ -34,7 +34,7 @@
                         <img src="../assets/images/mbr-96x96.png" alt="Imagen Programación 1" style="height: 3rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-7" href="index.html">Victor's gourmet - 2023</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-7" href="../index.html">Victor's gourmet - 2023</a></span>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger">
@@ -45,7 +45,7 @@
                 </div>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-white display-4" href="principal_servicios.html">Servicios</a></li>
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-white display-4" href="../principal_servicios.html">Servicios</a></li>
                     
                     <li class="nav-item"><a class="nav-link link text-white display-4" href="#">Contactos</a>
                     </li></ul>

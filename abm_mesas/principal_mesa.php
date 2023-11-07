@@ -17,6 +17,7 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="../assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="../assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="shortcut icon" href="../assets/images/mbr-96x96.png" type="image/x-icon">
  
   
   
@@ -45,12 +46,12 @@
                 </div>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-white display-4" href="alta_mesa1.php">alta Mesa</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="principal_servicios.html">Servicios</a></li>
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-white display-4" href="alta_mesa1.php">Crear Mesa</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="../principal_servicios.html">Servicios</a></li>
                     
-                    <li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobiri.se">Contactos</a>
+                    <li class="nav-item"><a class="nav-link link text-white display-4" href="../contacto.html">Contactos</a>
                     </li></ul>
                 
-                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-warning display-4" href="https://mobiri.se">Menú</a></div>
+                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-warning display-4" href="../abm_menu/principal_menu.php">Menú</a></div>
             </div>
         </div>
     </nav>
@@ -64,7 +65,10 @@
   <thead >
     <tr>
       <th class="colum" >
-        ID MESA
+        N° MESA
+      </th>
+      <th class="colum" >
+        Mozo
       </th>
       <th class="colum" >
         UBICACION
@@ -81,17 +85,21 @@
   <tbody>
       <?php
         include "../conexion.php";
-        $sql = "SELECT * FROM mesas ORDER BY ID_mesa DESC";
+        $sql = "SELECT * FROM mesas INNER JOIN mozos ON mesas.id_mozo = mozos.id_mozo ORDER BY ID_mesa DESC";
         $resultado = mysqli_query($conexion,$sql);
 
         while ($datos = mysqli_fetch_array($resultado)) {
           $id = $datos['ID_mesa'];
+          $mozo = $datos['nom_mozo'];
           $ubicacion = $datos['ubicacion'];
           $capacidad = $datos['capacidad'];
 
           echo "<tr>";
                 echo "<td>";
                       echo $id;
+                echo "</td>";
+                echo "<td>";
+                      echo $mozo;
                 echo "</td>";
                 echo "<td>";
                       echo $ubicacion;

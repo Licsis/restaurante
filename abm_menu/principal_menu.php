@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="shortcut icon" href="../assets/images/mbr-96x96.png" type="image/x-icon">
   <title>Principal</title>
   <style>
       td{
@@ -31,7 +32,7 @@
       <tbody>
             <?php
                 include "../conexion.php";
-                $sql1 = "SELECT * FROM `menu`ORDER BY ID_menu DESC";
+                $sql1 = "SELECT * FROM `menues`ORDER BY ID_menu DESC";
                 $consulta1 = mysqli_query($conexion, $sql1);
                 //var_dump($consulta1);
                 while ($datos = mysqli_fetch_array($consulta1)) {

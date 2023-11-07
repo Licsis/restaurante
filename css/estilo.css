@@ -1,9 +1,15 @@
+body{
+  background-color: #e0a21f;
+}
 #boton1 path {
   fill: #9d2b16;
+  width: 5rem;
+ 
 }
 
 #boton2 path {
   fill: #084a8b;
+  height: 3em;
 }
 
 #acciones{
@@ -11,23 +17,35 @@
   justify-content: space-around;
 }
 
-td{
-  border: darkgreen solid 3px;
+tr{
+  border:  33px solid darkred ;
   text-align: center;
+  font-size: 110%;
+  
 }
 thead{
-    border: darkgreen solid 3px;
+    border: 3px solid  darkred;
     text-decoration:underline;
-    font-size: 135%;
-    text-transform: uppercase;    
+    font-size: 85%;
+    text-transform: uppercase;  
+    background-color: #9d2b16 ;
+    color: #ffffff;
+  }
+  tbody{
+    background-color: #e0a21f;
+    border:2px solid #ffffff;
   }
 
 table{
-  border: darkgreen solid 3px;
-  margin: 10% auto;
+  position:static;
+  background-color: ;
+  border: 3px solid darkred;
+  border-radius: 35px;
+  margin: 5% auto;
   font-size: 25px;
-  width: 55%;
+  width: 65%;
   text-align: center;
+  margin-bottom: 20%;
 }
 
 #boton_crear{
@@ -39,4 +57,28 @@ table{
   color: white;
   font-size: large;
 }
+
+#formulario{
+  background-color:#003366;
+  color: #ffffff;
+  border-radius:35px;
+  font-size: large;
+  width: 50%;
+  padding: 3%;
+  
+}
+input,select{
+  text-align: center;
+  width: 50%;
+  border-radius: 25px;
+  box-shadow: 2px 2px 4px #9d2b16;
+}
+#submit{
+  border-radius:35px;
+  background-color: #003366;
+  color: #ffffff;
+  padding: 2%;
+
+}
+
 

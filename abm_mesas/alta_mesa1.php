@@ -10,7 +10,7 @@
   <meta property="og:image" content="">
   <meta name="twitter:title" content="Altas">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="../assets/images/logo-isam-am-128x130-1.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../assets/images/mbr-96x96.png" type="image/x-icon">
   <meta name="description" content="">
   
   
@@ -92,12 +92,12 @@
                 <fieldset> <legend> Crear Mesas </legend> 
                     <?php
                         include "../conexion.php";
-                        $sql = "SELECT ID_mesa, ubicacion FROM mesas";                    
-                        $resultado = mysqli_query($conexion,$sql);
+                        $sql1 = "SELECT ID_mesa,ubicacion FROM mesas GROUP BY ubicacion";                    
+                        $resultado = mysqli_query($conexion,$sql1);
 
                         ?>
                         <select name="ubicacion" id="">
-                            <option value="0">Elegir Ubicación</option>
+                            <option value="0" SELECTED>Elegir Ubicación</option>
     
                         <?php
                             while ($datos = mysqli_fetch_array($resultado)) {
@@ -109,10 +109,29 @@
                             }
                         ?>
 
+                    </select><br> <br>
+                    <?php
+                        $sql2 = "SELECT ID_mozo,nom_mozo FROM mozos ORDER BY nom_mozo";
+                        $resultado2 = mysqli_query($conexion,$sql2);
+                    ?>
+
+                    <select name="mozo" id="">
+                            <option value="0" SELECTED>--Elegir mozo--</option>
+    
+                        <?php
+                            while ($datos2 = mysqli_fetch_array($resultado2)) {
+                                $idMozo = $datos2['ID_mozo'];
+                                $nombre = $datos2['nom_mozo'];
+                            
+                                echo " <option value=".$idMozo."> ".$nombre." </option>";
+
+                            }
+                        ?>
+
                     </select>
                     
                     <br><br>
-                    <input placeholder="Capacidad" required name="capacidad"  type="number">
+                    <input placeholder="Capacidad de la mesa" required name="capacidad"  type="number">
                     <br><br>
                     <input type="submit" value="Crear Mesa" id="submit">
                     </fieldset>

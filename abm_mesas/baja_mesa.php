@@ -7,5 +7,5 @@
 ?>
 
 <script>
-  window.lacation.replace("principal_mesa.php");
+  window.location.replace("principal_mesa.php");
 </script>

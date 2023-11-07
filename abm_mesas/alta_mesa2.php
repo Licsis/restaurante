@@ -5,11 +5,12 @@
 
     $ubi = $_POST['ubicacion'];
     $cap = $_POST['capacidad'];
+    $mozo = $_POST['mozo'];
     
 
     
     
-    $sql = "INSERT INTO `mesas`(`ubicacion`, `capacidad`) VALUES ('$ubi','$cap')";
+    $sql = "INSERT INTO `mesas`(`ID_mozo`,`ubicacion`, `capacidad`) VALUES ('$mozo','$ubi','$cap')";
     mysqli_query($conexion, $sql) or die(mysqli_error($conexion)); 
 
 ?>

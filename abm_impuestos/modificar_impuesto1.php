@@ -25,7 +25,7 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="../assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="../assets/mobirise/css/mbr-additional.css" type="text/css">
-  
+  <link rel="stylesheet" href="../css/estilo.css">
   <style type="text/css">
    
       #formulario{
@@ -77,12 +77,22 @@
                 </div>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black display-4" href="#">Sobre nosotros</a></li><li class="nav-item"><a class="nav-link link text-black display-4" href="../principal_servicios.html">Servicios</a></li>
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                    <li class="nav-item">
+                        <a class="nav-link link text-black display-4" href="#">Sobre nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-black display-4" href="../principal_servicios.html">Servicios</a>
+                    </li>
                     
-                    <li class="nav-item"><a class="nav-link link text-black display-4" href="../contacto.html">Contactos</a>
-                    </li></ul>
+                    <li class="nav-item">
+                        <a class="nav-link link text-black display-4" href="../contacto.html">Contactos</a>
+                    </li>
+                </ul>
                 
-                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-warning display-4" href="../menu.html">Menú</a></div>
+                <div class="navbar-buttons mbr-section-btn">
+                    <a class="btn btn-warning display-4" href="../abm_menu/principal_menu.php">Menú</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -98,7 +108,6 @@
                     
                     $id = $_REQUEST['ID_impuesto'];
                     $sql1 = "SELECT ID_impuesto,nom_impuesto,porcentaje FROM impuestos WHERE ID_impuesto = $id";
-                    Echo "<h2>El ID ES: ".$id."</h2>";
                     $resultado = mysqli_query($conexion,$sql1);
 
                     while ($datos = mysqli_fetch_array($resultado)) {

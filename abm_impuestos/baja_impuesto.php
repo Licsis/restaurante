@@ -1,7 +1,7 @@
 <?php 
   include "../conexion.php";
-  $id = $_REQUEST['ID_impuestos'];
-  $sql2 = "DELETE FROM `impuestos` WHERE `ID_impuestos` =  $id";
+  $id = $_REQUEST['ID_impuesto'];
+  $sql2 = "DELETE FROM `impuestos` WHERE `ID_impuesto` =  $id";
   mysqli_query($conexion, $sql2) or die(mysqli_error($conexion)); 
 
 ?>
