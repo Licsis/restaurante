@@ -66,7 +66,7 @@
                         <img src="../assets/images/mbr-96x96.png" alt="Imagen Programación 1" style="height: 3rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="index.html">Victor's gourmet - 2023</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="../index.html">Victor's gourmet - 2023</a></span>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger">
@@ -106,6 +106,7 @@
             <?php
                     include "../conexion.php";
                     
+                    
                     $id = $_REQUEST['ID_impuesto'];
                     $sql1 = "SELECT ID_impuesto,nom_impuesto,porcentaje FROM impuestos WHERE ID_impuesto = $id";
                     $resultado = mysqli_query($conexion,$sql1);
@@ -114,7 +115,6 @@
                         $nom = $datos['nom_impuesto'];
                         $por =$datos['porcentaje'];
                         $ident = $datos['ID_impuesto'];
-
                       ?>
 
                      
@@ -124,7 +124,7 @@
                         <input placeholder="Nombre del impuesto" value="<?php echo $nom; ?>" name="nom_impuesto" type="text"> <br>
                         <br>
                         <input step="0.01" placeholder="Porcentaje" value="<?php echo $por;  ?>" name="porcentaje"  type="number">
-                        <input type="hidden" name="identificador" value="<?php $ident; ?>">
+                        
 
                         <br>
                         <br>

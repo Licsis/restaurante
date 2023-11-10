@@ -29,10 +29,7 @@
   
 </head>
 <body>
-  <?php
-    include "../conexion.php";
-    $identificador = $_REQUEST['ID_mesa'];
-  ?>
+
   <section data-bs-version="5.1" class="menu menu2 cid-tL77jeuzAV" once="menu" id="menu2-1f">
     
     <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
@@ -70,66 +67,61 @@
     <div class="align-center container-fluid" id="formulario">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-10">
+                <?php
+                    include "../conexion.php";
+                    $identificador = $_REQUEST['ID_mesa'];
+                ?>
                 
-                <form name="Alta Impuestos" action="<?php echo "alta_mesa2.php?ID_mesa=".$identificador; ?>" method="post" autocomplete="on" style="height: 10%;">
-                <fieldset> <legend> Crear Mesas </legend> 
-                    <?php
-                        
-                        $sql1 = "SELECT * FROM mesas WHERE ID_mesa = $identificador GROUP BY ubicacion";  
-                        $resultado = mysqli_query($conexion,$sql1);
-                        $sql2 = "SELECT ID_mesa,ubicacion FROM mesas";  
-                        $resultado2 = mysqli_query($conexion,$sql2);
-                        //var_dump($resultado2);
-                        ?>
-                        <select name="ubicacion" id="">
-                            <!-- option value="0" >Elegir Ubicación</option -->
-                        <?php
-                            while ($datos = mysqli_fetch_array($resultado) and $datos2 = mysqli_fetch_array($resultado2)) {
-                                $idm = $datos['ID_mesa'];
-                                $ubim = $datos['ubicacion'];
-                                $cap = $datos['capacidad'];
-                                $idm2 = $datos2['ID_mesa'];
-                                $ubim2 = $datos2['ubicacion'];
-                            
-                                  ?>
-                        <option value="<?php echo $ubim ?>" selected>
-                          <?php
-                            echo $ubim;
-                          ?>
-                        </option>
+                <form  action="<?php echo "modificar_mesa2.php?ID_mesa=".$identificador; ?>" method="post" autocomplete="off" style="height: 10%;">
+                <fieldset> <legend> Modificar Mesas </legend> 
+                                            <!-- option value="0" >Elegir Ubicación</option -->
+                    
+                            <select name="ubicacion" id="">
+                                <!-- option value="0" >Elegir Ubicación</option -->
+                                <?php
+                                $sql = "SELECT ID_mesa, ubicacion, capacidad FROM mesas WHERE ID_mesa = $identificador GROUP BY ubicacion";
+                                $resultado = mysqli_query($conexion, $sql);
+                                while ($datos = mysqli_fetch_array($resultado)) {
+                                    $ubim = $datos['ubicacion'];
+                                    $cap = $datos['capacidad'];
+                                    echo "<option value='$ubim' selected>-- $ubim --</option>";
+                                }
+                                $sql2 = "SELECT ID_mesa, ubicacion, capacidad FROM mesas GROUP BY ubicacion";
+                                $resultado2 = mysqli_query($conexion, $sql2);
+                                while ($datos2 = mysqli_fetch_array($resultado2)) {
+                                    $ubim2 = $datos2['ubicacion'];
+                                    echo "<option value='$ubim2'>$ubim2</option>";
+                                }
+                                ?>
+                            </select><br><br>
+                                                    
+
+                            <select name="nom_mozo" id="">
                             <?php
-                               
-                                  echo " <option value=".$ubim2."> ".$ubim2." </option>";
-                                
-                            }
-                        ?>
-
-                    </select><br> <br>
-                    
-                    <?php
-                        $sql3 = "SELECT ID_mozo,nom_mozo FROM mozos WHERE ID_mozo = $identificador ORDER BY nom_mozo";
-                        $resultado3 = mysqli_query($conexion,$sql3);
-                    ?>
-
-                    <select name="mozo" id="">
-                            <!-- option value="0" SELECTED>--Elegir mozo--</option -->
-    
-                        <?php
-                            while ($datos3 = mysqli_fetch_array($resultado3)) {
-                                $idMozo = $datos3['ID_mozo'];
-                                $nombre = $datos3['nom_mozo'];
+                                $sql = "SELECT nom_mozo FROM mesas INNER JOIN mozos ON mozos.ID_mozo = mesas.ID_mozo WHERE ID_mesa = $identificador ";
+                                $resultado = mysqli_query($conexion, $sql);
+                                while ($datos = mysqli_fetch_array($resultado)) {
+                                    $idm2 = $datos['ID_mozo'];
+                                    $nombre = $datos['nom_mozo'];
+                                    echo "<option value='$idm2' selected>|| $nombre ||</option>";
+                                }
+                                $sql2 = "SELECT mozos.ID_mozo,nom_mozo FROM mozos INNER JOIN mesas ON mozos.ID_mozo = mesas.ID_mozo GROUP BY nom_mozo ASC";
+                                $resultado2 = mysqli_query($conexion, $sql2);
+                                while ($datos2 = mysqli_fetch_array($resultado2)) {
+                                    $idm2 = $datos2['ID_mozo'];
+                                    $nombre = $datos2['nom_mozo'];
+                                    echo "<option value='$idm2'>$nombre</option>";
+                                }
+                                ?>
+                            </select><br><br>
                             
-                                echo " <option value=".$idMozo."> ".$nombre." </option>";
+                       
 
-                            }
-                        ?>
-
-                    </select>
+                   
                     
-                    <br><br>
                     <input placeholder="Capacidad de la mesa" value="<?php echo $cap;?>" required name="capacidad"  type="number">
                     <br><br>
-                    <input type="submit" value="Crear Mesa" id="submit">
+                    <input type="submit" value="Modificar Mesa" id="submit">
                     </fieldset>
                 </form>
                 

@@ -14,7 +14,7 @@
   <meta name="description" content="">
   
   
-  <title>Altas</title>
+  <title>Altas Mesa</title>
   <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-reboot.min.css">
@@ -25,27 +25,12 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="../assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="../assets/mobirise/css/mbr-additional.css" type="text/css">
-  
-  <style type="text/css">
-   
-      #formulario{
-      	background-color:#003366;
-        color: #ffffff;
-        border-radius:35px;
-        font-size: large;
-        width: 50%;
-      }
-      #submit{
-        border-radius:35px;
-        background-color: #003366;
-        color: #ffffff;
-        padding: 2%;
-      }
-
-
-</style>
-  
-  
+  <link rel="stylesheet" href="../css/estilo.css">
+   <style>
+        span{
+            color:#ffffff;
+        }
+   </style>
   
 </head>
 <body>
@@ -60,7 +45,7 @@
                         <img src="../assets/images/mbr-96x96.png" alt="Imagen Programación 1" style="height: 3rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="index.html">Victor's gourmet - 2023</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="../index.html">Victor's gourmet - 2023</a></span>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger">
@@ -71,7 +56,7 @@
                 </div>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobiri.se">Sobre nosotros</a></li><li class="nav-item"><a class="nav-link link text-black display-4" href="../principal_servicios.html">Servicios</a></li>
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black display-4" href="#">Sobre nosotros</a></li><li class="nav-item"><a class="nav-link link text-black display-4" href="../principal_servicios.html">Servicios</a></li>
                     
                     <li class="nav-item"><a class="nav-link link text-black display-4" href="../contacto.html">Contactos</a>
                     </li></ul>
@@ -104,7 +89,7 @@
                                 $idm = $datos['ID_mesa'];
                                 $ubim = $datos['ubicacion'];
                             
-                                echo " <option value=".$ubim."> ".$ubim." </option>";
+                                echo "<option value=".$ubim."> ".$ubim." </option>";
 
                             }
                         ?>
